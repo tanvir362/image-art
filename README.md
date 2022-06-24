@@ -20,7 +20,7 @@ image-art simulates image drawing, written in python. It uses OpenCV to precess 
 3. Install dependent packages
 
     ```bash
-    python3 -m install -r requirements.txt
+    python3 -m pip install -r requirements.txt
     ```
 
 **Inference!**
