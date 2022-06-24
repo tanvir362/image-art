@@ -28,8 +28,8 @@ def get_segments(ls):
 
 class ImageArt:
     
-    def __init__(self, file_name, width=500, height=500):
-        self.orginal = cv2.imread('images/'+file_name)
+    def __init__(self, path, width=500, height=500):
+        self.orginal = cv2.imread(path)
         self.max_width = width
         self.max_height = height
 
@@ -109,7 +109,7 @@ class ImageArt:
 
 if __name__ == '__main__':
 
-    art = ImageArt('tanvir.png')
+    art = ImageArt('images/tanvir.png')
     art.draw()
 
     # print(get_segments([1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0]))
