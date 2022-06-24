@@ -1,0 +1,6 @@
+env
+images/*
+!images/*_keep.*
+!images/tanvir.png
+.pyenv
+__pycache__
