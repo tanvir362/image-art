@@ -23,10 +23,10 @@ image-art simulates image drawing, written in python. It uses OpenCV to precess 
     python3 -m pip install -r requirements.txt
     ```
 
-**Inference!**
+**Run**
 
 ```bash
 python3 run.py -i path/to/image_file
 ```
 
-The path to the file can be both absolute and relative
+The path to the image file can be both absolute and relative
