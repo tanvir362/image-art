@@ -20,13 +20,14 @@ image-art simulates image drawing, written in python. It uses OpenCV to precess 
 3. Install dependent packages
 
     ```bash
+    python3 -m pip install --upgrade pip
     python3 -m pip install -r requirements.txt
     ```
 
 **Run**
 
 ```bash
-python3 run.py -i path/to/image_file
+python3 run.py path/to/image_file
 ```
 
-The path to the image file can be both absolute and relative
+The path to the image file can be both absolute and relative. You can also run ```python3 run.py``` which will draw default image
