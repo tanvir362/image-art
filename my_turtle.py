@@ -5,6 +5,7 @@ class MyTurtle(turtle.Turtle):
     def __init__(self, width, height, *args, **kwargs):
         screen = turtle.Screen()
         screen.bgcolor("#FADA5E")
+        screen.title('Image Art')
 
         super().__init__(*args, **kwargs)
 
