@@ -62,12 +62,14 @@ class ImageArt:
         resized = self.adjust_size()
         # resized = cv2.medianBlur(resized, 7)
 
-        # cv2.imshow('img', resized)
-        # cv2.waitKey(3000)
-        # cv2.destroyAllWindows()
 
         gray = cv2.cvtColor(resized, cv2.COLOR_RGBA2GRAY)
-        _, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+        # _, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+        _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU,)
+
+        # cv2.imshow('img', binary)
+        # cv2.waitKey(3000)
+        # cv2.destroyAllWindows()
 
         return binary
 
