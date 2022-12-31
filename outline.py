@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
+import time
 
-mp = []
 
 class Cell:
     def __init__(self, val):
@@ -32,6 +32,18 @@ def is_valid_coord(mp, R, C):
 
     return True
 
+def show_image(mp):
+    img = np.asarray(
+        [[*map(lambda cell: 0 if cell.is_black else 255, rw)] for rw in mp], dtype=np.uint8
+    )
+
+    cv2.imshow('Flood fill', img)
+
+def make_image(mp):
+
+    return np.asarray(
+        [[*map(lambda cell: 0 if cell.is_black else 255, rw)] for rw in mp], dtype=np.uint8
+    )
 
 def flood_fill(mp, R, C):
     q = []
@@ -53,6 +65,9 @@ def flood_fill(mp, R, C):
                     q.append((a, b))
 
                 mp[a][b].is_visited = True
+
+        cv2.imshow('flood fill', make_image(mp))
+        cv2.waitKey(1)
 
 
 
@@ -82,14 +97,15 @@ def outline(img):
 if __name__ == '__main__':
     from image_art import ImageArt
 
-    file_path = 'images/rabbit_keep.png'
-    art = ImageArt(file_path, 400, 400)
+    file_path = 'images/butterfly.png'
+    art = ImageArt(file_path)
 
     binary = art.prepare_image()
     outlined = outline(binary)
 
 
-    cv2.imshow('Binary', binary)
-    cv2.imshow('Outlined', outlined)
-    cv2.waitKey(10000)
+    # cv2.imshow('Binary', binary)
+    # cv2.waitKey(5000)
+    # cv2.imshow('Outlined', outlined)
+    cv2.waitKey(5000)
     cv2.destroyAllWindows()

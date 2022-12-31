@@ -36,6 +36,11 @@ class ImageArt:
     def set_orginal(self, path):
         self.orginal = cv2.imread(path)
 
+    def set_orginal_image(self, image, width=500, height=500):
+        self.orginal = image
+        self.max_width = width
+        self.max_height = height
+
     def adjust_size(self):
         w, h = self.orginal.shape[1], self.orginal.shape[0]
         wh_ratio = w / h
